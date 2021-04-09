@@ -6,12 +6,12 @@ export default function MainContent() {
     <main className="body-main">
       <Switch>
         <Route path="/characters">
-          <Characters />
+          <div></div>
         </Route>
       </Switch>
       <Switch>
         <Route path="/">
-          <Home />
+          <div></div>
         </Route>
       </Switch>
     </main>

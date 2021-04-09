@@ -5,12 +5,12 @@ import MainContent from "./Components/MainContent";
 
 function App() {
   return (
-    <div className="body">
-      <Router>
+    <Router>
+      <div className="body-layout">
         <Header />
         <MainContent />
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 }
 

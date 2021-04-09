@@ -1,7 +1,8 @@
-.body {
-  height: 100vh;
+.body-layout {
   display: grid;
-  place-items: center;
+  grid-template-rows: [header] 80px [content] 540px;
+  grid-template-columns: auto;
+  height: 100vh;
   color: #04b1c5;
   background-color: #111440;
   font-size: 2em;
