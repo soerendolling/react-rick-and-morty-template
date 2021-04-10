@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Character from "./Character";
 
 export default function MainContent() {
-  const [character, setCharacter] = useState();
+  const [character, setCharacter] = useState([]);
 
   useEffect(() => {
     const url = "https://rickandmortyapi.com/api/character/";
@@ -14,6 +14,7 @@ export default function MainContent() {
       .then((incomingData) => {
         const newData = incomingData.results;
         setCharacter(newData);
+        console.log(newData);
       })
       .catch((error) => {});
   }, []);
@@ -23,7 +24,7 @@ export default function MainContent() {
       <Switch>
         <Route path="/characters">
           <div className="character-layout">
-            <Character />
+            <Character characterData={character} />
           </div>
         </Route>
       </Switch>
