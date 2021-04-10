@@ -1,0 +1,11 @@
+.character--alive {
+  background: lightgreen;
+}
+
+.character--dead {
+  background: lightpink;
+}
+
+.character--unknown {
+  background: lightslategray;
+}
