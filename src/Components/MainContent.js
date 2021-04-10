@@ -16,7 +16,7 @@ export default function MainContent() {
         <Route path="/">
           <div className="home-content">
             <h3>Welcome to my Rick and Morty App</h3>
-            <div>
+            <div className="home-box__image">
               <p>Static Image of Rick and Morty</p>
             </div>
             <p>Developed by Me during the neuefische bootcamp</p>
