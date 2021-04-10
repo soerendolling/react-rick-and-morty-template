@@ -1,45 +1,29 @@
 import "./MainContent.css";
 import { Switch, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Character from "./Character";
 
 export default function MainContent() {
+  const [character, setCharacter] = useState();
+
+  useEffect(() => {
+    const url = "https://rickandmortyapi.com/api/character/";
+
+    fetch(url)
+      .then((res) => res.json())
+      .then((incomingData) => {
+        const newData = incomingData.results;
+        setCharacter(newData);
+      })
+      .catch((error) => {});
+  }, []);
+
   return (
     <main className="body-main">
       <Switch>
         <Route path="/characters">
           <div className="character-layout">
-            <article className="character-box">
-              <img
-                className="character-box__image"
-                src="https://rickandmortyapi.com/api/character/avatar/37.jpeg"
-                alt="A bild"
-              ></img>
-              <div className="character-box__name">
-                <p>Name:</p>
-                <p>Name</p>
-              </div>
-            </article>
-            <article className="character-box">
-              <img
-                className="character-box__image"
-                src="https://rickandmortyapi.com/api/character/avatar/37.jpeg"
-                alt="A bild"
-              ></img>
-              <div className="character-box__name">
-                <p>Name:</p>
-                <p>Name</p>
-              </div>
-            </article>
-            <article className="character-box">
-              <img
-                className="character-box__image"
-                src="https://rickandmortyapi.com/api/character/avatar/37.jpeg"
-                alt="A bild"
-              ></img>
-              <div className="character-box__name">
-                <p>Name:</p>
-                <p>Name</p>
-              </div>
-            </article>
+            <Character />
           </div>
         </Route>
       </Switch>
