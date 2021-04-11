@@ -1,6 +1,7 @@
-.body-main {
-  grid-row: content;
-  overflow-y: scroll;
+.character-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .character-layout {
@@ -30,4 +31,25 @@
 
 .character-box__name {
   font-size: 16px;
+}
+
+.character-button__load {
+  height: 30px;
+  width: 90px;
+  border-radius: 8px;
+}
+
+.character--alive {
+  background: lightgreen;
+  color: black;
+}
+
+.character--dead {
+  background: lightpink;
+  color: black;
+}
+
+.character--unknown {
+  background: lightslategray;
+  color: white;
 }
