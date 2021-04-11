@@ -1,6 +1,21 @@
 import "./Character.css";
+import { useEffect, useState } from "react";
 
-export default function Character({ characterData }) {
+export default function Character() {
+  const [character, setCharacter] = useState([]);
+
+  useEffect(() => {
+    const url = "https://rickandmortyapi.com/api/character/";
+
+    fetch(url)
+      .then((res) => res.json())
+      .then((incomingData) => {
+        const newData = incomingData.results;
+        setCharacter(newData);
+      })
+      .catch((error) => {});
+  }, []);
+
   let classForStatus;
   function getStatus(status) {
     if (status === "Alive") {
@@ -12,9 +27,8 @@ export default function Character({ characterData }) {
     }
     return classForStatus;
   }
-  console.log(classForStatus);
 
-  return characterData.map((characterInfo) => (
+  return character.map((characterInfo) => (
     <article className={`character-box ${getStatus(characterInfo.status)}`}>
       <img
         className="character-box__image"
