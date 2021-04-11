@@ -65,6 +65,11 @@ export default function CharacterAll() {
 
   return (
     <div className="character-main">
+      <div>
+        <button>Alive</button>
+        <button>dead</button>
+        <button>unknown</button>
+      </div>
       <div className="character-layout">{renderCharacter()}</div>
       {page < totalPages && (
         <button className="character-button__load" onClick={handleLoadMore}>

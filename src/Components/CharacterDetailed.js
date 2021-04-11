@@ -7,17 +7,12 @@ export default function CharacterDetailed() {
   const history = useHistory();
   const [character, setCharacter] = useState({});
 
-  console.log(id);
-
   useEffect(() => {
     const url = `https://rickandmortyapi.com/api/character/${id}`;
-
-    console.log(url);
 
     fetch(url)
       .then((res) => res.json())
       .then((incomingData) => {
-        console.log(incomingData);
         setCharacter(incomingData);
       })
       .catch((error) => {});
