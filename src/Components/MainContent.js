@@ -8,9 +8,7 @@ export default function MainContent() {
     <main className="body-main">
       <Switch>
         <Route path="/characters">
-          <div className="character-layout">
-            <CharacterAll />
-          </div>
+          <CharacterAll />
         </Route>
       </Switch>
       <Switch>

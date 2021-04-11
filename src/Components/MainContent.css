@@ -2,32 +2,3 @@
   grid-row: content;
   overflow-y: scroll;
 }
-
-.character-layout {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 15px;
-}
-
-.character-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  width: 140px;
-  height: auto;
-  border: solid 3px white;
-  border-radius: 8px;
-}
-
-.character-box__image {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-}
-
-.character-box__name {
-  font-size: 16px;
-}

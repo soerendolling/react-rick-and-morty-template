@@ -7,6 +7,8 @@ export default function CharacterDetailed() {
   const history = useHistory();
   const [character, setCharacter] = useState({});
 
+  console.log(id);
+
   useEffect(() => {
     const url = `https://rickandmortyapi.com/api/character/${id}`;
 
@@ -20,13 +22,9 @@ export default function CharacterDetailed() {
       })
       .catch((error) => {});
   }, [id]);
+
   console.log(character);
   return (
-    // <div>
-    //   <p>asdsad</p>
-    //   <p>asdsad</p>
-    // </div>
-
     <article className="character-detailed__box">
       <p>{character.name}</p>
       <div>
