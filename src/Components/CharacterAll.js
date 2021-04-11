@@ -14,7 +14,9 @@ export default function CharacterAll() {
       .then((res) => res.json())
       .then((incomingData) => {
         const newData = incomingData.results;
-        setCharacter(newData);
+        setCharacter((prevCharacters) => {
+          return [...prevCharacters, ...newData];
+        });
         setTotalPages(incomingData.info.pages);
       })
 
