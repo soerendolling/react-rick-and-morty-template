@@ -30,7 +30,10 @@ export default function CharacterAll() {
   }
 
   return character.map((characterInfo) => (
-    <article className={`character-box ${getStatus(characterInfo.status)}`}>
+    <article
+      key={characterInfo.id}
+      className={`character-box ${getStatus(characterInfo.status)}`}
+    >
       <img
         className="character-box__image"
         src={characterInfo.image}
@@ -38,7 +41,7 @@ export default function CharacterAll() {
       ></img>
 
       <div className="character-box__name">
-        <NavLink to="/character-page">
+        <NavLink to={`/characters/${characterInfo.id}`}>
           <p>Name:</p>
           <p>{characterInfo.name}</p>
         </NavLink>

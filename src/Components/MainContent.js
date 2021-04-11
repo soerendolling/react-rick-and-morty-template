@@ -14,7 +14,7 @@ export default function MainContent() {
         </Route>
       </Switch>
       <Switch>
-        <Route>
+        <Route path="/characters/:id">
           <div className="character-page-layout">
             <CharacterDetailed />
           </div>
