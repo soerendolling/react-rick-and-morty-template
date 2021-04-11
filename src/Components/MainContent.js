@@ -14,7 +14,6 @@ export default function MainContent() {
       .then((incomingData) => {
         const newData = incomingData.results;
         setCharacter(newData);
-        console.log(newData);
       })
       .catch((error) => {});
   }, []);
