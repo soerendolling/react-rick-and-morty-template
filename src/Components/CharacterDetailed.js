@@ -25,10 +25,9 @@ export default function CharacterDetailed() {
 
   console.log(character);
   return (
-    <article className="character-detailed__box">
-      <p>{character.name}</p>
-      <div>
-        {id}
+    <div className="character-detailed__layout">
+      <article className="character-detailed__box">
+        <p>{character.name}</p>
         <img
           src={character.image}
           alt="character avatar"
@@ -38,8 +37,9 @@ export default function CharacterDetailed() {
         <p>{`Gender:${character.gender}`}</p>
         <p>{`Species: ${character.species}`}</p>
         <p>{`Type: ${character.type}`}</p>
-      </div>
-      <button onClick={() => history.goBack()}>Back</button>
-    </article>
+
+        <button onClick={() => history.goBack()}>Back</button>
+      </article>
+    </div>
   );
 }

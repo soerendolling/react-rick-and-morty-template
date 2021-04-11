@@ -7,3 +7,8 @@
   background-color: #111440;
   font-size: 2em;
 }
+
+.body-main {
+  grid-row: content;
+  overflow-y: scroll;
+}
