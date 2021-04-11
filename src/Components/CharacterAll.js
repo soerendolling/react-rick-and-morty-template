@@ -1,7 +1,8 @@
-import "./Character.css";
+import "./CharacterAll.css";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
-export default function Character() {
+export default function CharacterAll() {
   const [character, setCharacter] = useState([]);
 
   useEffect(() => {
@@ -35,9 +36,12 @@ export default function Character() {
         src={characterInfo.image}
         alt={characterInfo.name}
       ></img>
+
       <div className="character-box__name">
-        <p>Name:</p>
-        <p>{characterInfo.name}</p>
+        <NavLink to="/character-page">
+          <p>Name:</p>
+          <p>{characterInfo.name}</p>
+        </NavLink>
       </div>
     </article>
   ));

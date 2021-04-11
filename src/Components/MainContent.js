@@ -1,35 +1,23 @@
 import "./MainContent.css";
 import { Switch, Route } from "react-router-dom";
-// import { useEffect, useState } from "react";
-import Character from "./Character";
+import CharacterAll from "./CharacterAll";
+import CharacterDetailed from "./CharacterDetailed";
 
 export default function MainContent() {
-  // const [character, setCharacter] = useState([]);
-
-  // useEffect(() => {
-  //   const url = "https://rickandmortyapi.com/api/character/";
-
-  //   fetch(url)
-  //     .then((res) => res.json())
-  //     .then((incomingData) => {
-  //       const newData = incomingData.results;
-  //       setCharacter(newData);
-  //     })
-  //     .catch((error) => {});
-  // }, []);
-
   return (
     <main className="body-main">
       <Switch>
         <Route path="/characters">
           <div className="character-layout">
-            <Character />
+            <CharacterAll />
           </div>
         </Route>
       </Switch>
       <Switch>
         <Route>
-          <div className="character-page-layout"></div>
+          <div className="character-page-layout">
+            <CharacterDetailed />
+          </div>
         </Route>
       </Switch>
       <Switch>
