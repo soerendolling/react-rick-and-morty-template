@@ -28,6 +28,11 @@ export default function MainContent() {
         </Route>
       </Switch>
       <Switch>
+        <Route>
+          <div className="character-page-layout"></div>
+        </Route>
+      </Switch>
+      <Switch>
         <Route exact path="/">
           <div className="home-layout">
             <h3>Welcome to my Rick and Morty App</h3>
