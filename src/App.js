@@ -12,16 +12,14 @@ function App() {
         <Header />
         <main className="body-main">
           <Switch>
-            <Route path="/characters">
-              <CharacterAll />
-            </Route>
-          </Switch>
-          <Switch>
             <Route path="/characters/:id">
               <CharacterDetailed />
             </Route>
-          </Switch>
-          <Switch>
+
+            <Route path="/characters">
+              <CharacterAll />
+            </Route>
+
             <Route exact path="/">
               <Home />
             </Route>

@@ -5,9 +5,9 @@ export default function Home() {
     <div className="home-layout">
       <h3>Welcome to my Rick and Morty App</h3>
       <div className="home-box__image">
-        <p>Static Image of Rick and Morty</p>
+        <p>No Picture For You</p>
       </div>
-      <p>Developed by Me during the neuefische bootcamp</p>
+      <p>Developed by Me without a picture</p>
     </div>
   );
 }
