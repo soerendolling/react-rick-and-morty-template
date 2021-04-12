@@ -6,6 +6,7 @@ export default function CharacterAll() {
   const [character, setCharacter] = useState([]);
   const [totalPages, setTotalPages] = useState();
   const [page, setPage] = useState(1);
+  const [filter, setFilter] = useState("");
 
   useEffect(() => {
     const url = `https://rickandmortyapi.com/api/character?page=${page}`;
@@ -41,8 +42,39 @@ export default function CharacterAll() {
     }
   }
 
+  let filteredCharacter;
+  if (filter === "Dead") {
+    filteredCharacter = character.filter(
+      (characterInfo) => characterInfo.status === "Dead"
+    );
+  } else if (filter === "Alive") {
+    filteredCharacter = character.filter(
+      (characterInfo) => characterInfo.status === "Alive"
+    );
+  } else if (filter === "unknown") {
+    filteredCharacter = character.filter(
+      (characterInfo) => characterInfo.status === "unknown"
+    );
+  } else {
+    filteredCharacter = character;
+  }
+
+  function handleAllFilter() {
+    setFilter("");
+  }
+
+  function handleDeadFilter() {
+    setFilter("Dead");
+  }
+  function handleAliveFilter() {
+    setFilter("Alive");
+  }
+  function handleUnknownFilter() {
+    setFilter("unknown");
+  }
+
   function renderCharacter() {
-    return character.map((characterInfo) => (
+    return filteredCharacter.map((characterInfo) => (
       <article
         key={characterInfo.id}
         className={`character-box ${getStatus(characterInfo.status)}`}
@@ -66,9 +98,10 @@ export default function CharacterAll() {
   return (
     <div className="character-main">
       <div>
-        <button>Alive</button>
-        <button>dead</button>
-        <button>unknown</button>
+        <button onClick={handleAllFilter}>All</button>
+        <button onClick={handleDeadFilter}>Dead</button>
+        <button onClick={handleAliveFilter}>Alive</button>
+        <button onClick={handleUnknownFilter}>unknown</button>
       </div>
       <div className="character-layout">{renderCharacter()}</div>
       {page < totalPages && (
