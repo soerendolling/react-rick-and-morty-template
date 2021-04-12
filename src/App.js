@@ -15,11 +15,9 @@ function App() {
             <Route path="/characters/:id">
               <CharacterDetailed />
             </Route>
-
             <Route path="/characters">
               <CharacterAll />
             </Route>
-
             <Route exact path="/">
               <Home />
             </Route>
